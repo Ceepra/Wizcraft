@@ -323,3 +323,4 @@ Received Import Request.
 Start importing Assets/Fantasy Chests PBR using Guid(f458ba0b5109fd340b16248f6353e289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bbdfd2db6b7577953f12b1097b8be66') in 0.006995 seconds 
   Import took 0.008783 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
