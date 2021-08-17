@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
     bool isGrounded;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -26,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundCheckDistance, groundMask);
 
         if(isGrounded && velocity.y < 0)
@@ -46,5 +50,14 @@ public class PlayerMovement : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
+        if (z == 0)
+            animator.SetBool("isStanding", true);
+        else 
+        {
+            animator.SetBool("isStanding", false);
+            animator.SetBool("isRunning", true);
+        }
+        
     }
 }
